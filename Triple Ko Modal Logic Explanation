@@ -1,0 +1,16 @@
+Triple Ko Situation:
+    - Definition
+    - Rules
+        - Ko Rule: □(B_t ≠ B_t-1), where B_t is the current board position, B_t-1 is the previous board position, and □ denotes "always."
+    - Example
+        - Initial Position: B_0
+            - Group A: A1, A2, A3
+            - Group B: B1, B2, B3
+            - Group C: C1, C2, C3
+        - Moves: m_1, m_2, ..., m_n
+        - Repeating Cycle: A->B->C->A
+    - Mathematical Explanation
+        - Three sets: A, B, C
+        - B_t = (A_t-1 - B_t-2) ∪ (B_t-1 - C_t-2) ∪ (C_t-1 - A_t-2)
+        - Infinite loop: □(B_t = B_t-2)
+        - Loop invariance: ◊(A_t = A_t-2) ∧ ◊(B_t = B_t-2) ∧ ◊(C_t = C_t-2), where ◊ denotes "eventually."
